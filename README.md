@@ -1,5 +1,5 @@
 <br />
-<h3 align="center">That was my final year project at university. Due to some personal reasons, I decided to post it on GitHub after its completion.</h3>
+<h3 align="center">That was my final year project at university.</h3>
 <br />
 
 # coderHouse
