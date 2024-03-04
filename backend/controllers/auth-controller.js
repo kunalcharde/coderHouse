@@ -6,9 +6,10 @@ const UserDto = require('../dtos/user-dto');
 
 class AuthController {
     async sendOtp(req, res) {
+        console.log('beep boop');
         const { phone } = req.body;
         if (!phone) {
-            res.status(400).json({ message: 'Phone field is required!' });
+           return res.status(400).json({ message: 'Phone field is required!' });
         }
 
         // const otp = await otpService.generateOtp();
@@ -22,14 +23,14 @@ class AuthController {
         // send OTP
         try {
             // await otpService.sendBySms(phone, otp);
-            res.json({
+           return res.json({
                 hash: `${hash}.${expires}`,
                 phone,
                 otp
             });
         } catch (err) {
             console.log(err);
-            res.status(500).json({ message: 'message sending failed' });
+           return res.status(500).json({ message: 'message sending failed' });
         }
     }
 

@@ -11,7 +11,7 @@ const ACTIONS = require('./actions');
 
 const io = require('socket.io')(server, {
     cors: {
-        origin: process.env.FRONT_URL,
+        origin: "http://localhost:3000",
         methods: ['GET', 'POST'],
     },
 });
@@ -19,7 +19,7 @@ const io = require('socket.io')(server, {
 app.use(cookieParser());
 const corsOption = {
     credentials: true,
-    origin: [process.env.FRONT_URL],
+    origin: ["http://localhost:3000"],
 };
 app.use(cors(corsOption));
 app.use('/storage', express.static('storage'));
